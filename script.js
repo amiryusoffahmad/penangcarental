@@ -69,13 +69,84 @@ const i18nData = {
         hours_detail: "8:00 AM – 10:00 PM (Isnin – Ahad)",
         social_title: "Ikuti Kami",
 
+        // --- PLACES TO VISIT ---
         places_meta_title: "Tempat Menarik di Penang | Kereta Sewa Murah Penang",
         places_tag: "Panduan Pelancongan",
         places_title: "Tempat Menarik Untuk Diterokai di Penang Dengan Kereta",
-        places_subtitle: "Merancang percutian ke Penang? Menyewa kereta ialah cara terbaik untuk meneroka pulau ini mengikut rentak anda sendiri.",
+        places_subtitle: "Merancang percutian ke Penang? Menyewa kereta ialah cara terbaik untuk meneroka pulau ini mengikut rentak anda sendiri. Meneroka permata tersembunyi, jalan pesisir pantai yang indah, syurga makanan tempatan, dan tarikan terkenal kini lebih mudah tanpa bergantung pada pengangkutan awam atau perkhidmatan e-hailing.",
         why_drive_label: "Kenapa Berkereta Lebih Selesa?",
+        cta_places_title: "Sedia Terokai Tempat Menarik Ini?",
+        cta_places_desc: "Tempah kereta sewa bersih, selesa dan diselenggara rapi dengan Anuar & Group sekarang. Penghantaran percuma disediakan di Lapangan Terbang Antarabangsa Penang (PIA).",
 
-        // --- FOOTER ---
+        // Place 1: Penang Hill
+        p1_title: "1. Penang Hill (Bukit Bendera)",
+        p1_desc: "Antara tarikan paling popular di Pulau Pinang. Nikmati cuaca yang nyaman, pemandangan panoramik memukau, laluan berjalan kaki, kafe, dan mercu tanda bersejarah.",
+        p1_subhead: "Tarikan Masa Depan: Penang Hill Cable Car",
+        p1_subdesc: "Pembangunan pelancongan ikonik yang menawarkan perjalanan spektakuler di atas hutan hujan tropika dengan pemandangan udara George Town dan garis pantai.",
+        p1_h1: "Pemandangan udara pulau dan Selat Melaka yang menakjubkan.",
+        p1_h2: "Perjalanan selesa dan indah merentasi hutan hujan tropika.",
+        p1_h3: "Peluang fotografi matahari terbit & terbenam yang tidak boleh dilepaskan.",
+        p1_h4: "Akses mudah ke pelbagai tarikan utama di puncak Bukit Bendera.",
+        p1_why: "Memandu membolehkan anda terus dari Lapangan Terbang (PIA) atau hotel, serta menggabungkan lawatan ke Kuil Kek Lok Si, Pasar Air Itam, dan George Town dalam satu hari tanpa bergantung pada jadual pengangkutan awam.",
+
+        // Place 2: Batu Ferringhi
+        p2_title: "2. Batu Ferringhi Beach",
+        p2_desc: "Tiada percutian ke Penang yang lengkap tanpa meluangkan masa di Pantai Batu Ferringhi untuk menikmati angin laut dan pemandangan persisiran pantai.",
+        p2_h1: "Bersantai di tepi pantai pasir putih dan menikmati pemandangan laut.",
+        p2_h2: "Mencuba aktiviti sukan air (water sports) yang mendebarkan.",
+        p2_h3: "Menikmati makanan dan minuman di kafe-kafe tepi pantai.",
+        p2_h4: "Melawat Pasar Malam (Night Market) Batu Ferringhi yang terkenal.",
+        p2_why: "Memandu sendiri memberi kebebasan untuk berada di pantai sehingga waktu matahari terbenam tanpa perlu bimbang tentang jadual atau kesukaran mendapatkan kenderaan pulang.",
+
+        // Place 3: ESCAPE
+        p3_title: "3. ESCAPE Penang",
+        p3_desc: "Destinasi sempurna untuk keluarga dan peminat aktiviti lasak. ESCAPE Penang menawarkan pelbagai tarikan luar bangunan di kawasan Teluk Bahang.",
+        p3_h1: "Pengalaman ziplining merentasi kanopi hutan.",
+        p3_h2: "Gelongsor air (water slides) bertaraf rekod dunia.",
+        p3_h3: "Laluan tali (rope courses) dan cabaran halangan fizikal (obstacle challenges).",
+        p3_h4: "Aktiviti sesuai untuk kanak-kanak, remaja, dan orang dewasa.",
+        p3_why: "Membawa kereta sewa memudahkan perjalanan keluarga, terutama bagi menyimpan kelengkapan mandi, pakaian tukar, serta beg makanan dengan mudah di dalam ruang bonet.",
+
+        // Place 4: Kek Lok Si
+        p4_title: "4. Kek Lok Si Temple",
+        p4_desc: "Salah satu kuil Buddha terbesar di Asia Tenggara yang terletak di Air Itam, terkenal dengan nilai seni bina dan pemandangan luas seluruh pulau.",
+        p4_h1: "Patung gergasi Goddess of Mercy (Dewi Kuan Yin) yang megah.",
+        p4_h2: "Pagoda indah dengan gabungan seni bina pelbagai budaya.",
+        p4_h3: "Seni ukiran yang teliti dan pemandangan panorama bandar raya.",
+        p4_why: "Memandu adalah cara paling mudah dan direct untuk sampai ke kuil di lereng bukit ini, terutamanya pada hari bekerja bagi mengelakkan laluan berjalan jauh.",
+
+        // Place 5: George Town
+        p5_title: "5. George Town UNESCO World Heritage Site",
+        p5_desc: "Bandar bersejarah yang penuh dengan keunikan budaya, bangunan warisan kolonial, muzium, kafe hipster, dan sajian makanan jalanan tempatan yang popular.",
+        p5_subhead: "Jalan-Jalan Wajib Dilawati:",
+        p5_h1: "<strong>Armenian Street:</strong> Hub mural lukisan dinding (street art) ikonik & kraf tangan.",
+        p5_h2: "<strong>Love Lane:</strong> Kafe santai, suasana malam, dan bangunan warisan.",
+        p5_h3: "<strong>Beach Street:</strong> Senibina perbankan kolonial & acara hujung minggu.",
+        p5_h4: "<strong>Chulia Street:</strong> Syurga jajahan makanan street food tempatan.",
+        p5_why: "Walaupun parking terhad semasa hujung minggu, kereta sewa memudahkan anda bergerak dari satu lorong warisan ke pusat membeli-belah dan lokasi berdekatan dengan selesa.",
+
+        // Place 6: Gurney Drive & Andaman
+        p6_title: "6. Gurney Drive & Andaman Island",
+        p6_desc: "Terkenal sebagai syurga makanan penjaja (hawker food), pusat membeli-belah (Gurney Plaza & Gurney Paragon), dan laluan berjalan kaki santai di tepi laut.",
+        p6_subhead: "Terokai Pembangunan Baharu Pulau Andaman:",
+        p6_subdesc: "Terletak bersebelahan Gurney Drive, perbandaran tambakan laut baharu ini mentransformasikan garis pantai utara kepada destinasi gaya hidup moden yang terhubung terus dengan Gurney Bay.",
+        p6_h1: "Persiaran pesisir laut (coastal promenade) & taman rekreasi hijau.",
+        p6_h2: "Laluan santai untuk berjalan kaki dan berbasikal di tepi pantai.",
+        p6_h3: "Akses terus ke Gurney Bay, Gurney Plaza, dan Gurney Paragon dalam 1 trip.",
+        p6_h4: "Sesuai untuk tangkapan foto pemandangan matahari terbenam Selat Melaka.",
+        p6_why: "Membolehkan anda meneroka persiaran Gurney Drive, parkir di mall, dan terus memandu ke kawasan waterfront Andaman Island mengikut fleksibiliti masa anda.",
+
+        // Place 7: The Light City
+        p7_title: "7. The Light City Waterfront",
+        p7_desc: "Terletak di pesisir pantai timur Pulau Pinang, destinasi gaya hidup moden ini menawarkan pemandangan indah Selat Pulau Pinang yang tenang, jauh daripada kesesakan George Town.",
+        p7_subhead: "Aktiviti Menarik di The Light City:",
+        p7_h1: "Berjalan santai di sepanjang persiaran pesisir laut (waterfront promenade).",
+        p7_h2: "Menikmati pemandangan indah matahari terbit dan terbenam.",
+        p7_h3: "Jamuan makan di restoran tepi laut, kafe, dan penginapan di hotel mewah.",
+        p7_h4: "Menghadiri pameran & acara di Penang Waterfront Convention Centre (PWCC).",
+        p7_h5: "Fotografi pemandangan latar langit (skyline) dan laut yang memukau.",
+        p7_why: "Mudah diakses dengan fasiliti tempat letak kereta yang luas. Lokasi strategik untuk menggabungkan lawatan ke Jambatan Pulau Pinang, Queensbay Mall, dan George Town dalam hari yang sama.",
+
         footer_brand: "Kereta Sewa Penang",
         footer_tagline: "Kereta Sewa Murah Penang",
         footer_rights: "&copy; 2026 Hak Cipta Terpelihara."
@@ -149,13 +220,84 @@ const i18nData = {
         hours_detail: "8:00 AM – 10:00 PM (Monday – Sunday)",
         social_title: "Follow Us",
 
+        // --- PLACES TO VISIT ---
         places_meta_title: "Places to Visit in Penang | Penang Affordable Car Rental",
         places_tag: "Travel Guide",
         places_title: "Best Places to Visit in Penang by Car",
-        places_subtitle: "Planning a trip to Penang? Renting a car is one of the best ways to discover the island at your own pace.",
+        places_subtitle: "Planning a trip to Penang? Renting a car is one of the best ways to discover the island at your own pace. Exploring hidden gems, scenic coastal roads, local food paradises, and famous attractions is now easier without relying on public transport or e-hailing services.",
         why_drive_label: "Why Renting a Car is More Convenient?",
+        cta_places_title: "Ready to Explore These Attractions?",
+        cta_places_desc: "Book a clean, comfortable, and well-maintained rental car with Anuar & Group now. Free delivery is available at Penang International Airport (PIA).",
 
-        // --- FOOTER ---
+        // Place 1: Penang Hill
+        p1_title: "1. Penang Hill",
+        p1_desc: "One of the island's most popular attractions. Enjoy cool weather, breathtaking panoramic views, walking trails, cafés, and historical landmarks.",
+        p1_subhead: "Future Attraction: Penang Hill Cable Car",
+        p1_subdesc: "An iconic tourism development offering a spectacular journey over the tropical rainforest with aerial views of George Town and the coastline.",
+        p1_h1: "Stunning aerial views of the island and the Straits of Malacca.",
+        p1_h2: "Comfortable and scenic journey across the tropical rainforest.",
+        p1_h3: "Unmissable sunrise & sunset photography opportunities.",
+        p1_h4: "Easy access to key attractions at the summit of Penang Hill.",
+        p1_why: "Driving allows you to travel directly from Penang International Airport or your hotel, and combine visits to Kek Lok Si Temple, Air Itam Market, and George Town in a single day without depending on public transport schedules.",
+
+        // Place 2: Batu Ferringhi
+        p2_title: "2. Batu Ferringhi Beach",
+        p2_desc: "No visit to Penang is complete without spending time at Batu Ferringhi Beach to enjoy the sea breeze and coastal views.",
+        p2_h1: "Relax by the white sandy beach and enjoy ocean views.",
+        p2_h2: "Try thrilling water sports (parasailing, jet ski).",
+        p2_h3: "Enjoy beachside cafés and dining.",
+        p2_h4: "Visit the famous Batu Ferringhi Night Market.",
+        p2_why: "Driving gives you the freedom to stay at the beach until sunset without worrying about transport schedules or finding a ride back.",
+
+        // Place 3: ESCAPE
+        p3_title: "3. ESCAPE Penang",
+        p3_desc: "Perfect for families and adventure lovers, ESCAPE Penang offers thrilling outdoor activities in Teluk Bahang.",
+        p3_h1: "Ziplining experience across the jungle canopy.",
+        p3_h2: "World-record breaking long water slides.",
+        p3_h3: "Rope courses and exciting physical obstacle challenges.",
+        p3_h4: "Activities suitable for children, teenagers, and adults.",
+        p3_why: "Renting a car makes family travel convenient, especially for storing extra clothing, swimming gear, and snacks in the trunk.",
+
+        // Place 4: Kek Lok Si
+        p4_title: "4. Kek Lok Si Temple",
+        p4_desc: "One of Southeast Asia's largest Buddhist temples, located in Air Itam. Renowned for its architecture and city panoramas.",
+        p4_h1: "Giant statue of the Goddess of Mercy (Kuan Yin).",
+        p4_h2: "Beautiful Pagoda combining multi-cultural architectural styles.",
+        p4_h3: "Intricate carvings and sweeping panoramic city views.",
+        p4_why: "Driving is the easiest and most direct way to reach this hillside temple, especially on weekdays to avoid long walking routes.",
+
+        // Place 5: George Town
+        p5_title: "5. George Town UNESCO World Heritage Site",
+        p5_desc: "A historic town filled with rich culture, colonial heritage buildings, museums, hipster cafés, and world-famous street food.",
+        p5_subhead: "Must-Visit Streets:",
+        p5_h1: "<strong>Armenian Street:</strong> Iconic street art mural hub & handicrafts.",
+        p5_h2: "<strong>Love Lane:</strong> Cozy cafés, nightlife, and heritage architecture.",
+        p5_h3: "<strong>Beach Street:</strong> Colonial banking architecture & weekend events.",
+        p5_h4: "<strong>Chulia Street:</strong> A haven for authentic local street food.",
+        p5_why: "Although parking can be limited during weekends, having your own rental car allows you to explore nearby heritage spots and shopping malls comfortably.",
+
+        // Place 6: Gurney Drive & Andaman
+        p6_title: "6. Gurney Drive & Andaman Island",
+        p6_desc: "Known as Penang's food paradise with hawker stalls, shopping malls (Gurney Plaza & Gurney Paragon), and a scenic seaside promenade.",
+        p6_subhead: "Explore the New Andaman Island Development:",
+        p6_subdesc: "Located adjacent to Gurney Drive, this new land reclamation township transforms the northern coastline into a modern lifestyle destination directly connected to Gurney Bay.",
+        p6_h1: "Coastal promenade & lush green recreational parks.",
+        p6_h2: "Scenic walking and cycling paths along the coastline.",
+        p6_h3: "Direct access to Gurney Bay, Gurney Plaza, and Gurney Paragon in a single trip.",
+        p6_h4: "Perfect for taking scenic sunset photos of the Straits of Malacca.",
+        p6_why: "Renting a car allows you to easily explore Gurney Drive, park at malls, and drive directly to the Andaman Island waterfront at your own pace.",
+
+        // Place 7: The Light City
+        p7_title: "7. The Light City Waterfront",
+        p7_desc: "Located along Penang's eastern coastline, offering breathtaking views of the Penang Strait away from the hustle and bustle of George Town.",
+        p7_subhead: "Exciting Activities at The Light City:",
+        p7_h1: "Take a relaxing walk along the waterfront promenade.",
+        p7_h2: "Enjoy stunning sunrise and sunset views.",
+        p7_h3: "Waterfront dining, cafés, and luxury hotel stays.",
+        p7_h4: "Attend exhibitions & events at Penang Waterfront Convention Centre (PWCC).",
+        p7_h5: "Stunning photography spots for skyline and ocean views.",
+        p7_why: "Easily accessible by car with spacious parking facilities. Strategically located to combine visits to Penang Bridge, Queensbay Mall, and George Town on the same day.",
+
         footer_brand: "Penang Car Rental",
         footer_tagline: "Penang Car Rental 2026",
         footer_rights: "&copy; 2026 All Rights Reserved."
@@ -164,7 +306,7 @@ const i18nData = {
 
 let currentLang = 'ms';
 
-// 1. TRANSLATE LANGUAGE
+// 2. TRANSLATE LANGUAGE
 window.toggleLanguage = function() {
     currentLang = currentLang === 'ms' ? 'en' : 'ms';
     const langBtnText = document.getElementById('langText');
@@ -189,7 +331,7 @@ window.toggleLanguage = function() {
     calculatePrice();
 };
 
-// 2. TOGGLE LIGHT / DARK MODE
+// 3. TOGGLE LIGHT / DARK MODE
 const moonIconSVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
 const sunIconSVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
 
@@ -207,7 +349,7 @@ window.toggleTheme = function() {
     }
 };
 
-// 3. CALCULATOR LOGIC
+// 4. CALCULATOR LOGIC
 window.calculatePrice = function() {
     const carSelect = document.getElementById('carSelect');
     const startDateInput = document.getElementById('startDate'); 
@@ -287,7 +429,7 @@ window.calculatePrice = function() {
     }
 };
 
-// 4. QUICK SELECT CAR
+// 5. QUICK SELECT CAR
 window.quickSelectCar = function(carName) {
     const carSelect = document.getElementById('carSelect');
     if (carSelect) carSelect.value = carName;
@@ -300,7 +442,7 @@ window.quickSelectCar = function(carName) {
     calculatePrice();
 };
 
-// 5. FILTER CAR FLEET
+// 6. FILTER CAR FLEET
 window.filterFleet = function(category, event) {
     const buttons = document.querySelectorAll('.filter-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
@@ -319,7 +461,7 @@ window.filterFleet = function(category, event) {
     });
 };
 
-// 6. WHATSAPP BOOKING
+// 7. WHATSAPP BOOKING
 window.handleBooking = function(event) {
     if (event) event.preventDefault();
 
@@ -365,8 +507,9 @@ Please confirm availability for these dates. Thank you!`;
     window.open(whatsappURL, '_blank');
 };
 
-// 7. TOGGLE MOBILE MENU
-window.toggleMobileMenu = function() {
+// 8. TOGGLE MOBILE MENU (Global Function)
+window.toggleMobileMenu = function(e) {
+    if (e) e.stopPropagation();
     const navMenu = document.getElementById('navPillMenu');
     const hamburgerBtn = document.getElementById('mobileMenuBtn');
     
@@ -376,7 +519,20 @@ window.toggleMobileMenu = function() {
     }
 };
 
-// 8. INITIALIZATION ON PAGE LOAD
+// 9. SCROLL REVIEWS
+window.scrollReviews = function(direction) {
+    const reviewsSlider = document.getElementById('reviewsSlider');
+    if (!reviewsSlider) return;
+    
+    const scrollAmount = 340;
+    if (direction === 'left') {
+        reviewsSlider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+        reviewsSlider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+};
+
+// 10. INITIALIZATION ON PAGE LOAD (Single Consolidated Listener)
 document.addEventListener('DOMContentLoaded', function () {
     const startDateInput = document.getElementById('startDate');
     const endDateInput = document.getElementById('endDate');
@@ -396,11 +552,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     calculatePrice();
 
-    // Auto-close menu mobile bila tekan link
-    const navLinks = document.querySelectorAll('.nav-pill-menu a');
-    const navMenu = document.getElementById('navPillMenu');
     const hamburgerBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navPillMenu');
 
+    // Tutup menu bila tekan mana-mana link dalam navbar
+    const navLinks = document.querySelectorAll('#navPillMenu a, .nav-pill-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navMenu && navMenu.classList.contains('active')) {
@@ -408,6 +564,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (hamburgerBtn) hamburgerBtn.classList.remove('active');
             }
         });
+    });
+
+    // Tutup menu bila klik di luar kawasan navbar & hamburger button
+    document.addEventListener('click', function(e) {
+        if (navMenu && hamburgerBtn) {
+            if (!navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+            }
+        }
     });
 
     // Testimoni Slider
@@ -443,39 +609,4 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburgerBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navPillMenu');
-
-    // Toggle menu bila tekan hamburger button
-    if (hamburgerBtn && navMenu) {
-        hamburgerBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            navMenu.classList.toggle('active');
-            hamburgerBtn.classList.toggle('active');
-        });
-    }
-
-    // Tutup menu bila tekan link navigasi
-    const navLinks = document.querySelectorAll('#navPillMenu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                if (hamburgerBtn) hamburgerBtn.classList.remove('active');
-            }
-        });
-    });
-
-    // Tutup menu bila tekan di luar kawasan menu
-    document.addEventListener('click', function(e) {
-        if (navMenu && hamburgerBtn) {
-            if (!navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-                navMenu.classList.remove('active');
-                hamburgerBtn.classList.remove('active');
-            }
-        }
-    });
 });
