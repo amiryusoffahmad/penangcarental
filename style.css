@@ -114,14 +114,14 @@
         /* ==========================================================================
            2. NAVBAR WITH TOGGLE CONTROLS
            ========================================================================== */
-        .navbar-wrapper {
-            position: fixed;
-            top: 12px;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
+.navbar-wrapper {
+    position: sticky; /* atau fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Pastikan z-index tinggi supaya berada di lapisan paling atas */
+    background-color: var(--bg-card, #ffffff); /* Pastikan background tidak lutsinar/transparent */
+}
         .navbar {
             background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(12px);
@@ -1454,13 +1454,12 @@
 }
 
 /* =========================================================
-   MOBILE NAVBAR & HAMBURGER MENU STYLES
+   HAMBURGER BUTTON & MOBILE MENU STYLING
    ========================================================= */
 
-/* Sembunyikan Butang Hamburger pada Desktop secara lalai */
-/* Direct Stylings untuk Hamburger Button */
+/* Default: Sembunyikan hamburger pada skrin desktop */
 .hamburger-btn {
-    display: none; /* Sembunyi kat Desktop */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 28px;
@@ -1472,49 +1471,86 @@
     z-index: 1001;
 }
 
+/* Tetapan bar garisan hamburger */
 .hamburger-btn .bar {
-    height: 3px;
     width: 100%;
-    background-color: var(--text-heading);
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
+    height: 3px;
+    background-color: var(--text-heading, #1e293b);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+header, nav, .navbar {
+    overflow: visible !important;
 }
 
-/* Animasi Tukar ke Simbol 'X' apabila Aktif */
-.hamburger-btn.active .bar:nth-child(1) {
-    transform: translateY(8.5px) rotate(45deg);
-}
-
-.hamburger-btn.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-btn.active .bar:nth-child(3) {
-    transform: translateY(-8.5px) rotate(-45deg);
-}
-
-/* MEDIA QUERY UTK RESPONSIVE MOBILE (< 768px) */
 @media (max-width: 768px) {
+    /* Paparkan butang hamburger di mobile */
     .hamburger-btn {
-        display: flex; /* Papaarkan pada paparan mobile */
+        display: flex;
     }
 
+    /* Mod Menu Navigasi Mobile */
     .nav-pill-menu {
+        display: none;
         position: fixed;
-        top: 70px;
-        left: -100%;
+        top: 65px; /* Laraskan mengikut ketinggian header */
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 65px);
+        background-color: #ffffff;
+
+        /* BUANG BENTUK BUJUR & BORDER DESKTOP */
+        border-radius: 0 !important;
+        border: none !important;
+        outline: none !important;
+
         flex-direction: column;
-        background-color: var(--bg-card);
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+        gap: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+    }
+
+    /* PAPARKAN MENU APABILA CLASS .active DITAMBAH */
+    .nav-pill-menu.active {
+        display: flex !important;
+    }
+
+    /* BUANG BORDER/KAPSUL PADA A & LI DI MOBILE */
+    .nav-pill-menu a,
+    .nav-pill-menu li {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #1e293b;
+        text-decoration: none;
         width: 100%;
         text-align: center;
-        transition: 0.3s ease-in-out;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.15);
-        padding: 20px 0;
-        z-index: 1000;
+        padding: 12px 0;
+        
+        /* Reset gaya kapsul/button pada link */
+        border-radius: 0 !important;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
     }
 
-    /* Paparkan Menu Bila Class 'active' Ditambah */
-    .nav-pill-menu.active {
-        left: 0;
+    /* Boleh tambah border halus bawah setiap item jika mahu */
+    .nav-pill-menu a:not(:last-child) {
+        border-bottom: 1px solid #f1f5f9 !important;
+    }
+
+    /* Animasi Pertukaran Hamburger ke ikon 'X' */
+    .hamburger-btn.active .bar:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+
+    .hamburger-btn.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-btn.active .bar:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
     }
 }
