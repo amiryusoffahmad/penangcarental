@@ -77,7 +77,7 @@ const i18nData = {
 
         // --- FOOTER ---
         footer_brand: "Kereta Sewa Penang",
-        footer_tagline: "Kereta Sewa Penang 2026",
+        footer_tagline: "Kereta Sewa Murah Penang",
         footer_rights: "&copy; 2026 Hak Cipta Terpelihara."
     },
     en: {
