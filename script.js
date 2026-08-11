@@ -69,7 +69,7 @@ const i18nData = {
         hours_detail: "8:00 AM – 10:00 PM (Isnin – Ahad)",
         social_title: "Ikuti Kami",
 
-        places_meta_title: "Tempat Menarik di Penang | Anuar & Group Kereta Sewa",
+        places_meta_title: "Tempat Menarik di Penang | Kereta Sewa Murah Penang",
         places_tag: "Panduan Pelancongan",
         places_title: "Tempat Menarik Untuk Diterokai di Penang Dengan Kereta",
         places_subtitle: "Merancang percutian ke Penang? Menyewa kereta ialah cara terbaik untuk meneroka pulau ini mengikut rentak anda sendiri.",
@@ -149,7 +149,7 @@ const i18nData = {
         hours_detail: "8:00 AM – 10:00 PM (Monday – Sunday)",
         social_title: "Follow Us",
 
-        places_meta_title: "Places to Visit in Penang | Anuar & Group Car Rental",
+        places_meta_title: "Places to Visit in Penang | Penang Affordable Car Rental",
         places_tag: "Travel Guide",
         places_title: "Best Places to Visit in Penang by Car",
         places_subtitle: "Planning a trip to Penang? Renting a car is one of the best ways to discover the island at your own pace.",
