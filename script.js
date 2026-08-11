@@ -4,6 +4,7 @@ const i18nData = {
         // --- NAVBAR ---
         nav_home: "Utama",
         nav_fleet: "Senarai Kereta",
+        nav_places: "Tempat Menarik",
         nav_reviews: "Testimoni",
         nav_contact: "Hubungi",
         nav_whatsapp: "WhatsApp",
@@ -40,23 +41,6 @@ const i18nData = {
         // --- CAR CARD / SPECS ---
         unit_per_day: "/ hari",
         btn_book: "Tempah",
-        tag_most_economical: "Paling Jimat",
-        tag_best_seller: "Paling Laris",
-        tag_top_choice: "Pilihan Utama",
-        tag_spacious_boot: "Bonet Luas",
-        tag_7_seater: "7 Seater",
-        tag_suv_mpv: "SUV / MPV",
-        tag_comfortable_sedan: "Sedan Selesa",
-        tag_popular_choice: "Popular Choice",
-        tag_fuel_efficient: "Jimat Minyak",
-        tag_6_seater: "6 Seater",
-        tag_family_mpv: "Familia MPV",
-        tag_economy: "Ekonomi",
-        tag_large_mpv: "MPV Besar",
-        tag_premium_suv: "SUV Premium",
-        tag_4x4_heavy_duty: "4x4 Heavy Duty",
-        tag_new_model: "New Model",
-        tag_vip_luxury: "VIP Luxury",
 
         // --- TESTIMONIALS ---
         reviews_tag: "Testimoni",
@@ -85,6 +69,12 @@ const i18nData = {
         hours_detail: "8:00 AM – 10:00 PM (Isnin – Ahad)",
         social_title: "Ikuti Kami",
 
+        places_meta_title: "Tempat Menarik di Penang | Anuar & Group Kereta Sewa",
+        places_tag: "Panduan Pelancongan",
+        places_title: "Tempat Menarik Untuk Diterokai di Penang Dengan Kereta",
+        places_subtitle: "Merancang percutian ke Penang? Menyewa kereta ialah cara terbaik untuk meneroka pulau ini mengikut rentak anda sendiri.",
+        why_drive_label: "Kenapa Berkereta Lebih Selesa?",
+
         // --- FOOTER ---
         footer_brand: "Kereta Sewa Penang",
         footer_tagline: "Kereta Sewa Penang 2026",
@@ -94,6 +84,7 @@ const i18nData = {
         // --- NAVBAR ---
         nav_home: "Home",
         nav_fleet: "Car Fleet",
+        nav_places: "Places to Visit",
         nav_reviews: "Reviews",
         nav_contact: "Contact",
         nav_whatsapp: "WhatsApp",
@@ -130,23 +121,6 @@ const i18nData = {
         // --- CAR CARD / SPECS ---
         unit_per_day: "/ day",
         btn_book: "Book Now",
-        tag_most_economical: "Most Savings",
-        tag_best_seller: "Best Seller",
-        tag_top_choice: "Top Choice",
-        tag_spacious_boot: "Spacious Boot",
-        tag_7_seater: "7 Seater",
-        tag_suv_mpv: "SUV / MPV",
-        tag_comfortable_sedan: "Comfy Sedan",
-        tag_popular_choice: "Popular Choice",
-        tag_fuel_efficient: "Fuel Efficient",
-        tag_6_seater: "6 Seater",
-        tag_family_mpv: "Family MPV",
-        tag_economy: "Economy",
-        tag_large_mpv: "Large MPV",
-        tag_premium_suv: "Premium SUV",
-        tag_4x4_heavy_duty: "4x4 Heavy Duty",
-        tag_new_model: "New Model",
-        tag_vip_luxury: "VIP Luxury",
 
         // --- TESTIMONIALS ---
         reviews_tag: "Testimonials",
@@ -175,6 +149,12 @@ const i18nData = {
         hours_detail: "8:00 AM – 10:00 PM (Monday – Sunday)",
         social_title: "Follow Us",
 
+        places_meta_title: "Places to Visit in Penang | Anuar & Group Car Rental",
+        places_tag: "Travel Guide",
+        places_title: "Best Places to Visit in Penang by Car",
+        places_subtitle: "Planning a trip to Penang? Renting a car is one of the best ways to discover the island at your own pace.",
+        why_drive_label: "Why Renting a Car is More Convenient?",
+
         // --- FOOTER ---
         footer_brand: "Penang Car Rental",
         footer_tagline: "Penang Car Rental 2026",
@@ -184,7 +164,7 @@ const i18nData = {
 
 let currentLang = 'ms';
 
-// 1. FUNCTION TRANSLATE LANGUAGE
+// 1. TRANSLATE LANGUAGE
 window.toggleLanguage = function() {
     currentLang = currentLang === 'ms' ? 'en' : 'ms';
     const langBtnText = document.getElementById('langText');
@@ -236,6 +216,7 @@ window.calculatePrice = function() {
     if (!carSelect || carSelect.selectedIndex === -1) return;
 
     const selectedOpt = carSelect.options[carSelect.selectedIndex];
+    if (!selectedOpt) return;
 
     const r1 = parseFloat(selectedOpt.getAttribute('data-r1')) || 0;
     const r3 = parseFloat(selectedOpt.getAttribute('data-r3')) || r1;
@@ -263,7 +244,7 @@ window.calculatePrice = function() {
 
     let days = 1;
 
-    if (start && end && !isNaN(start) && !isNaN(end) && end > start) {
+    if (start && end && !isNaN(start.getTime()) && !isNaN(end.getTime()) && end > start) {
         const diffTime = Math.abs(end - start);
         days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     }
@@ -306,26 +287,20 @@ window.calculatePrice = function() {
     }
 };
 
-// 4. BUTANG TEMPAH DEKAT KAD KERETA (QUICK SELECT)
+// 4. QUICK SELECT CAR
 window.quickSelectCar = function(carName) {
     const carSelect = document.getElementById('carSelect');
-    
-    if (carSelect) {
-        carSelect.value = carName;
-    }
+    if (carSelect) carSelect.value = carName;
 
     const bookingCard = document.querySelector('.floating-booking-bar') || document.getElementById('utama') || document.querySelector('form');
     if (bookingCard) {
-        bookingCard.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'center'
-        });
+        bookingCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     calculatePrice();
 };
 
-// 5. BUTANG FILTER KERETA
+// 5. FILTER CAR FLEET
 window.filterFleet = function(category, event) {
     const buttons = document.querySelectorAll('.filter-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
@@ -344,7 +319,7 @@ window.filterFleet = function(category, event) {
     });
 };
 
-// 6. HANDLE BOOKING FORM VIA WHATSAPP
+// 6. WHATSAPP BOOKING
 window.handleBooking = function(event) {
     if (event) event.preventDefault();
 
@@ -390,22 +365,19 @@ Please confirm availability for these dates. Thank you!`;
     window.open(whatsappURL, '_blank');
 };
 
-// 7. BUTANG SLIDE TESTIMONI
-window.scrollReviews = function(direction) {
-    const slider = document.getElementById('reviewsSlider');
-    if (!slider) return;
-
-    const scrollAmount = 340;
-    if (direction === 'left') {
-        slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    } else {
-        slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+// 7. TOGGLE MOBILE MENU
+window.toggleMobileMenu = function() {
+    const navMenu = document.getElementById('navPillMenu');
+    const hamburgerBtn = document.getElementById('mobileMenuBtn');
+    
+    if (navMenu && hamburgerBtn) {
+        navMenu.classList.toggle('active');
+        hamburgerBtn.classList.toggle('active');
     }
 };
 
-// INITIALIZATION APABILA PAGE SIAP LOAD
+// 8. INITIALIZATION ON PAGE LOAD
 document.addEventListener('DOMContentLoaded', function () {
-    // Set Tarikh Default (Hari ini & Esok)
     const startDateInput = document.getElementById('startDate');
     const endDateInput = document.getElementById('endDate');
 
@@ -416,17 +388,29 @@ document.addEventListener('DOMContentLoaded', function () {
     if (startDateInput && !startDateInput.value) startDateInput.value = today.toISOString().split('T')[0];
     if (endDateInput && !endDateInput.value) endDateInput.value = tomorrow.toISOString().split('T')[0];
 
-    // Event Listener untuk Borang / Tarikh
     if (startDateInput) startDateInput.addEventListener('change', calculatePrice);
     if (endDateInput) endDateInput.addEventListener('change', calculatePrice);
     
     const carSelect = document.getElementById('carSelect');
     if (carSelect) carSelect.addEventListener('change', calculatePrice);
 
-    // Initial Calculation
     calculatePrice();
 
-    // Event Listener Testimoni Slider (fallback jika tidak guna onclick)
+    // Auto-close menu mobile bila tekan link
+    const navLinks = document.querySelectorAll('.nav-pill-menu a');
+    const navMenu = document.getElementById('navPillMenu');
+    const hamburgerBtn = document.getElementById('mobileMenuBtn');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+            }
+        });
+    });
+
+    // Testimoni Slider
     const reviewsSlider = document.getElementById('reviewsSlider');
     const prevBtn = document.getElementById('slideLeft');
     const nextBtn = document.getElementById('slideRight');
@@ -436,7 +420,7 @@ document.addEventListener('DOMContentLoaded', function () {
         prevBtn.addEventListener('click', () => reviewsSlider.scrollBy({ left: -340, behavior: 'smooth' }));
     }
 
-    // 8. BUTANG SLIDE GALERI
+    // Galeri Slider
     const galleryTrack = document.getElementById("galleryTrack");
     const galleryPrevBtn = document.getElementById("galleryPrevBtn");
     const galleryNextBtn = document.getElementById("galleryNextBtn");
@@ -459,4 +443,39 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navPillMenu');
+
+    // Toggle menu bila tekan hamburger button
+    if (hamburgerBtn && navMenu) {
+        hamburgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            hamburgerBtn.classList.toggle('active');
+        });
+    }
+
+    // Tutup menu bila tekan link navigasi
+    const navLinks = document.querySelectorAll('#navPillMenu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+            }
+        });
+    });
+
+    // Tutup menu bila tekan di luar kawasan menu
+    document.addEventListener('click', function(e) {
+        if (navMenu && hamburgerBtn) {
+            if (!navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+            }
+        }
+    });
 });
