@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ms" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="places_meta_title">Tempat Menarik di Penang | Anuar & Group Kereta Sewa</title>
+    <meta name="description" content="Terokai tempat menarik terbaik di Penang dengan kereta sewa. Penang Hill, Batu Ferringhi, ESCAPE, Kek Lok Si, George Town, Gurney Drive, Andaman Island & The Light City.">
+    <link rel="icon" type="image/png" href="images/logo anuar1.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Custom CSS for Places Page Grid & Image Spaces -->
+    <style>
+       /* =========================================================
+   1. PENYESUAIAN GRID (KAD TERAKHIR DI TENGAH)
+   ========================================================= */
+.places-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Kad terakhir secara automatik berada di tengah */
+    gap: 28px;
+    margin-top: 32px;
+    max-width: 920px; /* Hadkan lebar supaya muat tepat 2 kolum */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.place-card {
+    flex: 1 1 340px;
+    max-width: 450px; /* Menghalang kad tunggal di bawah daripada menjadi terlalu lebar */
+    background: var(--bg-card, #ffffff);
+    border: 1px solid var(--border-color, rgba(0,0,0,0.08));
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+}
+        .place-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+        }
+        
+        /* Image Wrapper & Styling */
+        .place-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            background-color: var(--bg-tertiary, #f1f5f9);
+        }
+        .place-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .place-card:hover .place-img {
+            transform: scale(1.06);
+        }
+
+        .place-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(4px);
+            color: #ffffff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
+            z-index: 2;
+        }
+        .place-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-heading, #1e293b);
+            margin-bottom: 10px;
+        }
+        .place-desc {
+            font-size: 0.92rem;
+            color: var(--text-body, #475569);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .place-subhead {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-heading, #0f172a);
+            margin: 12px 0 6px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .place-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+        }
+        .place-highlights li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 0.88rem;
+            color: var(--text-body, #475569);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .place-highlights li::before {
+            content: "•";
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+        .why-drive-box {
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 4px solid #f59e0b;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-heading, #1e293b);
+            margin-top: auto;
+        }
+        .why-drive-box strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #d97706;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar-wrapper">
+        <div class="container">
+            <header class="navbar">
+                <a href="index.html" class="brand-logo">
+                    <img src="images/logo anuar1.png" alt="Logo Anuar & Group Kereta Sewa Penang" class="logo-img">                    
+                    <div class="brand-text">
+                        <h1>Anuar & Group Sdn Bhd</h1>
+                    </div>
+                </a>
+
+                <nav class="nav-pill-menu">
+                    <a href="index.html#utama" data-i18n="nav_home">Utama</a>
+                    <a href="index.html#fleet" data-i18n="nav_fleet">Senarai Kereta</a>
+                    <a href="places-to-visit.html" class="active" data-i18n="nav_places">Tempat Menarik</a>
+                    <a href="index.html#testimoni" data-i18n="nav_reviews">Testimoni</a>
+                    <a href="index.html#lokasi" data-i18n="nav_contact">Hubungi</a>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="btn-control" onclick="toggleLanguage()" id="langBtn" aria-label="Tukar Bahasa">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        <span id="langText">EN</span>
+                    </button>
+
+                    <button class="btn-control" onclick="toggleTheme()" id="themeBtn" aria-label="Tukar Tema Mode">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    </button>
+
+                    <a href="https://wa.me/60105606211" target="_blank" class="btn-whatsapp-pill" aria-label="Hubungi WhatsApp Anuar">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span data-i18n="nav_whatsapp">WhatsApp</span>
+                    </a>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <!-- MAIN PLACES CONTENT -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <span class="section-tag" data-i18n="places_tag">Panduan Pelancongan</span>
+                <h2 class="section-title" data-i18n="places_title">Best Places to Visit in Penang by Car</h2>
+                <p style="color: var(--text-body); max-width: 760px; margin: 12px auto 0 auto;" data-i18n="places_subtitle">
+                    Planning a trip to Penang? Menyewa kereta ialah cara terbaik untuk meneroka pulau ini mengikut rentak anda sendiri. Meneroka permata tersembunyi, jalan pesisir pantai yang indah, syurga makanan tempatan, dan tarikan terkenal kini lebih mudah tanpa bergantung pada pengangkutan awam atau perkhidmatan e-hailing.
+                </p>
+            </div>
+
+            <div class="places-grid">
+
+                <!-- 1. Penang Hill -->
+                <div class="place-card">
+                    <div>
+                        <div class="place-img-wrapper">
+                            <img src="images/penang-hill.jpg" alt="Penang Hill & Kereta Kabel" class="place-img" onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        
+                        <h3 class="place-title" data-i18n="p1_title">1. Penang Hill (Bukit Bendera)</h3>
+                        <p class="place-desc" data-i18n="p1_desc">Antara tarikan paling popular di Pulau Pinang. Nikmati cuaca yang nyaman, pemandangan panoramik memukau, laluan berjalan kaki, kafe, dan mercu tanda bersejarah.</p>
+                        
+                        <div class="place-subhead">Tarikan Masa Depan: Penang Hill Cable Car</div>
+                        <p class="place-desc" style="font-size:0.86rem; margin-bottom:10px;">Pembangunan pelancongan ikonik yang menawarkan perjalanan spektakuler di atas hutan hujan tropika dengan pemandangan udara George Town dan garis pantai.</p>
+                        
+                        <ul class="place-highlights">
+                            <li data-i18n="p1_h1">Pemandangan udara pulau dan Selat Melaka yang menakjubkan.</li>
+                            <li data-i18n="p1_h2">Perjalanan selesa dan indah merentasi hutan hujan tropika.</li>
+                            <li data-i18n="p1_h3">Peluang fotografi matahari terbit & terbenam yang tidak boleh dilepaskan.</li>
+                            <li data-i18n="p1_h4">Akses mudah ke pelbagai tarikan utama di puncak Bukit Bendera.</li>
+                        </ul>
+                    </div>
+                    <div class="why-drive-box">
+                        <strong data-i18n="why_drive_label">Kenapa Berkereta Lebih Selesa?</strong>
+                        <span data-i18n="p1_why">Memandu membolehkan anda terus dari Lapangan Terbang (PIA) atau hotel, serta menggabungkan lawatan ke Kuil Kek Lok Si, Pasar Air Itam, dan George Town dalam satu hari tanpa bergantung pada jadual pengangkutan awam.</span>
+                    </div>
+                </div>
+
+                <!-- 2. Batu Ferringhi Beach -->
+                <div class="place-card">
+                    <div>
+                        <div class="place-img-wrapper">
+                            <img src="images/batu feringgi beach.jpg" alt="Pantai Batu Ferringhi" class="place-img" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+
+                        <h3 class="place-title" data-i18n="p2_title">2. Batu Ferringhi Beach</h3>
+                        <p class="place-desc" data-i18n="p2_desc">Tiada percutian ke Penang yang lengkap tanpa meluangkan masa di Pantai Batu Ferringhi untuk menikmati angin laut dan pemandangan persisiran pantai.</p>
+                        
+                        <ul class="place-highlights">
+                            <li data-i18n="p2_h1">Bersantai di tepi pantai pasir putih dan menikmati pemandangan laut.</li>
+                            <li data-i18n="p2_h2">Mencuba aktiviti sukan air (water sports) yang mendebarkan.</li>
+                            <li data-i18n="p2_h3">Menikmati makanan dan minuman di kafe-kafe tepi pantai.</li>
+                            <li data-i18n="p2_h4">Melawat Pasar Malam (Night Market) Batu Ferringhi yang terkenal.</li>
+                        </ul>
+                    </div>
+                    <div class="why-drive-box">
+                        <strong data-i18n="why_drive_label">Kenapa Berkereta Lebih Selesa?</strong>
+                        <span data-i18n="p2_why">Memandu sendiri memberi kebebasan untuk berada di pantai sehingga waktu matahari terbenam tanpa perlu bimbang tentang jadual atau kesukaran mendapatkan kenderaan pulang.</span>
+                    </div>
+                </div>
+
+                <!-- 3. ESCAPE Penang -->
+                <div class="place-card">
+                    <div>
+                        <div class="place-img-wrapper">
+                            <img src="images/escape 2.jpg" alt="ESCAPE Penang Theme Park" class="place-img" onerror="this.src='https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+
+                        <h3 class="place-title" data-i18n="p3_title">3. ESCAPE Penang</h3>
+                        <p class="place-desc" data-i18n="p3_desc">Destinasi sempurna untuk keluarga dan peminat aktiviti lasak. ESCAPE Penang menawarkan pelbagai tarikan luar bangunan di kawasan Teluk Bahang.</p>
+                        
+                        <ul class="place-highlights">
+                            <li data-i18n="p3_h1">Pengalaman ziplining merentasi kanopi hutan.</li>
+                            <li data-i18n="p3_h2">Gelongsor air (water slides) bertaraf rekod dunia.</li>
+                            <li data-i18n="p3_h3">Laluan tali (rope courses) dan cabaran halangan fizikal (obstacle challenges).</li>
+                            <li data-i18n="p3_h4">Aktiviti sesuai untuk kanak-kanak, remaja, dan orang dewasa.</li>
+                        </ul>
+                    </div>
+                    <div class="why-drive-box">
+                        <strong data-i18n="why_drive_label">Kenapa Berkereta Lebih Selesa?</strong>
+                        <span data-i18n="p3_why">Membawa kereta sewa memudahkan perjalanan keluarga, terutama bagi menyimpan kelengkapan mandi, pakaian tukar, serta beg makanan dengan mudah di dalam ruang bonet.</span>
+                    </div>
+                </div>
+
+                <!-- 4. Kek Lok Si Temple -->
+                <div class="place-card">
+                    <div>
+                        <div class="place-img-wrapper">
+                            <img src="images/kek lok si temple 1.jpg" alt="Kuil Kek Lok Si Penang" class="place-img" onerror="this.src='https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+
+                        <h3 class="place-title" data-i18n="p4_title">4. Kek Lok Si Temple</h3>
+                        <p class="place-desc" data-i18n="p4_desc">Salah satu kuil Buddha terbesar di Asia Tenggara yang terletak di Air Itam, terkenal dengan nilai seni bina dan pemandangan luas seluruh pulau.</p>
+                        
+                        <ul class="place-highlights">
+                            <li data-i18n="p4_h1">Patung gergasi Goddess of Mercy (Dewi Kuan Yin) yang megah.</li>
+                            <li data-i18n="p4_h2">Pagoda indah dengan gabungan seni bina pelbagai budaya.</li>
+                            <li data-i18n="p4_h3">Seni ukiran yang teliti dan pemandangan panorama bandar raya.</li>
+                        </ul>
+                    </div>
+                    <div class="why-drive-box">
+                        <strong data-i18n="why_drive_label">Kenapa Berkereta Lebih Selesa?</strong>
+                        <span data-i18n="p4_why">Memandu adalah cara paling mudah dan direct untuk sampai ke kuil di lereng bukit ini, terutamanya pada hari bekerja bagi mengelakkan laluan berjalan jauh.</span>
+                    </div>
+                </div>
+
+                <!-- 5. George Town UNESCO Heritage Site -->
+                <div class="place-card">
+                    <div>
+                        <div class="place-img-wrapper">
+                            <img src="images/unisco 1.jpg" alt="George Town Heritage Street Art" class="place-img" onerror="this.src='https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+
+                        <h3 class="place-title" data-i18n="p5_title">5. George Town UNESCO World Heritage Site</h3>
+                        <p class="place-desc" data-i18n="p5_desc">Bandar bersejarah yang penuh dengan keunikan budaya, bangunan warisan kolonial, muzium, kafe hipster, dan sajian makanan jalanan tempatan yang popular.</p>
+                        
+                        <div class="place-subhead">Jalan-Jalan Wajib Dilawati:</div>
+                        <ul class="place-highlights">
+                            <li data-i18n="p5_h1"><strong>Armenian Street:</strong> Hub mural lukisan dinding (street art) ikonik & kraf tangan.</li>
+                            <li data-i18n="p5_h2"><strong>Love Lane:</strong> Kafe santai, suasana malam, dan bangunan warisan.</li>
+                            <li data-i18n="p5_h3"><strong>Beach Street:</strong> Senibina perbankan kolonial & acara hujung minggu.</li>
+                            <li data-i18n="p5_h4"><strong>Chulia Street:</strong> Syurga jajahan makanan street food tempatan.</li>
+                        </ul>
+                    </div>
+                    <div class="why-drive-box">
+                        <strong data-i18n="why_drive_label">Kenapa Berkereta Lebih Selesa?</strong>
+                        <span data-i18n="p5_why">Walaupun parking terhad semasa hujung minggu, kereta sewa memudahkan anda bergerak dari satu lorong warisan ke pusat membeli-belah dan lokasi berdekatan dengan selesa.</span>
+                    </div>
+                </div>
+
+                <!-- 6. Gurney Drive & Andaman Island -->
+                <div class="place-card">
+                    <div>
+                        <div class="place-img-wrapper">
+                            <img src="images/andaman island.jpg" alt="Gurney Drive & Pulau Andaman" class="place-img" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+
+                        <h3 class="place-title" data-i18n="p6_title">6. Gurney Drive & Andaman Island</h3>
+                        <p class="place-desc" data-i18n="p6_desc">Terkenal sebagai syurga makanan penjaja (hawker food), pusat membeli-belah (Gurney Plaza & Gurney Paragon), dan laluan berjalan kaki santai di tepi laut.</p>
+                        
+                        <div class="place-subhead">Terokai Pembangunan Baharu Pulau Andaman:</div>
+                        <p class="place-desc" style="font-size:0.86rem; margin-bottom:10px;">Terletak bersebelahan Gurney Drive, perbandaran tambakan laut baharu ini mentransformasikan garis pantai utara kepada destinasi gaya hidup moden yang terhubung terus dengan Gurney Bay.</p>
+
+                        <ul class="place-highlights">
+                            <li data-i18n="p6_h1">Persiaran pesisir laut (coastal promenade) & taman rekreasi hijau.</li>
+                            <li data-i18n="p6_h2">Laluan santai untuk berjalan kaki dan berbasikal di tepi pantai.</li>
+                            <li data-i18n="p6_h3">Akses terus ke Gurney Bay, Gurney Plaza, dan Gurney Paragon dalam 1 trip.</li>
+                            <li data-i18n="p6_h4">Sesuai untuk tangkapan foto pemandangan matahari terbenam Selat Melaka.</li>
+                        </ul>
+                    </div>
+                    <div class="why-drive-box">
+                        <strong data-i18n="why_drive_label">Kenapa Berkereta Lebih Selesa?</strong>
+                        <span data-i18n="p6_why">Membolehkan anda meneroka persiaran Gurney Drive, parkir di mall, dan terus memandu ke kawasan waterfront Andaman Island mengikut fleksibiliti masa anda.</span>
+                    </div>
+                </div>
+
+                <!-- 7. The Light City Waterfront -->
+                <div class="place-card">
+                    <div>
+                        <div class="place-img-wrapper">
+                            <img src="images/the light city 2.jpg" alt="The Light City Waterfront Penang" class="place-img" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+
+                        <h3 class="place-title" data-i18n="p7_title">7. The Light City Waterfront</h3>
+                        <p class="place-desc" data-i18n="p7_desc">Terletak di pesisir pantai timur Pulau Pinang, destinasi gaya hidup moden ini menawarkan pemandangan indah Selat Pulau Pinang yang tenang, jauh daripada kesesakan George Town.</p>
+                        
+                        <div class="place-subhead">Aktiviti Menarik di The Light City:</div>
+                        <ul class="place-highlights">
+                            <li data-i18n="p7_h1">Berjalan santai di sepanjang persiaran pesisir laut (waterfront promenade).</li>
+                            <li data-i18n="p7_h2">Menikmati pemandangan indah matahari terbit dan terbenam.</li>
+                            <li data-i18n="p7_h3">Jamuan makan di restoran tepi laut, kafe, dan penginapan di hotel mewah.</li>
+                            <li data-i18n="p7_h4">Menghadiri pameran & acara di Penang Waterfront Convention Centre (PWCC).</li>
+                            <li data-i18n="p7_h5">Fotografi pemandangan latar langit (skyline) dan laut yang memukau.</li>
+                        </ul>
+                    </div>
+                    <div class="why-drive-box">
+                        <strong data-i18n="why_drive_label">Kenapa Berkereta Lebih Selesa?</strong>
+                        <span data-i18n="p7_why">Mudah diakses dengan fasiliti tempat letak kereta yang luas. Lokasi strategik untuk menggabungkan lawatan ke Jambatan Pulau Pinang, Queensbay Mall, dan George Town dalam hari yang sama.</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER SECTION -->
+    <section class="cta-banner-section">
+        <div class="container">
+            <div class="cta-card">
+                <h2 class="cta-title" data-i18n="cta_places_title">Sedia Terokai Tempat Menarik Ini?</h2>
+                <p class="cta-description" data-i18n="cta_places_desc">
+                    Tempah kereta sewa bersih, selesa dan diselenggara rapi dengan Anuar & Group sekarang. Penghantaran percuma disediakan di Lapangan Terbang Antarabangsa Penang (PIA).
+                </p>
+                <div class="cta-actions">
+                    <a href="https://wa.me/60105606211?text=Salam%20Anuar,%20saya%20nak%20tempah%20kereta%20utk%20pusing%20Penang" target="_blank" class="btn-cta-whatsapp" aria-label="Tempah Kereta Sewa via WhatsApp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span data-i18n="cta_btn_wa">Tempah Sekarang via WhatsApp</span>
+                    </a>
+                    <a href="index.html#fleet" class="btn-cta-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+                        <span data-i18n="cta_btn_fleet">Lihat Katalog Kereta</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p><strong>Anuar & Group Sdn Bhd</strong> • <span data-i18n="footer_tagline">Kereta Sewa Penang 2026</span></p>
+            <p style="margin-top: 4px;" data-i18n="footer_rights">&copy; 2026 Hak Cipta Terpelihara.</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/60105606211?text=Salam%20Anuar,%20saya%20nak%20sewa%20kereta" target="_blank" class="floating-whatsapp" aria-label="WhatsApp Anuar">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
