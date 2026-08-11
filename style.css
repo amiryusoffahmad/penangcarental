@@ -1430,3 +1430,91 @@
     }
 
 }
+
+/* =========================================================
+   2. RESPONSIVE MOBILE (SEMBUNYIKAN TAJUK NAMA SYARIKAT)
+   ========================================================= */
+@media (max-width: 400px) {
+    /* Sembunyikan teks nama syarikat bila paparan mobile ketat */
+    .brand-text {
+        display: none !important;
+    }
+    
+    /* Pastikan navbar kekal tersusun rapi */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+    }
+
+    .place-card {
+        max-width: 100%; /* Penuhkan lebar pada skrin telefon */
+    }
+}
+
+/* =========================================================
+   MOBILE NAVBAR & HAMBURGER MENU STYLES
+   ========================================================= */
+
+/* Sembunyikan Butang Hamburger pada Desktop secara lalai */
+/* Direct Stylings untuk Hamburger Button */
+.hamburger-btn {
+    display: none; /* Sembunyi kat Desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-btn .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-heading);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animasi Tukar ke Simbol 'X' apabila Aktif */
+.hamburger-btn.active .bar:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+
+.hamburger-btn.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active .bar:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* MEDIA QUERY UTK RESPONSIVE MOBILE (< 768px) */
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: flex; /* Papaarkan pada paparan mobile */
+    }
+
+    .nav-pill-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background-color: var(--bg-card);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.15);
+        padding: 20px 0;
+        z-index: 1000;
+    }
+
+    /* Paparkan Menu Bila Class 'active' Ditambah */
+    .nav-pill-menu.active {
+        left: 0;
+    }
+}
