@@ -153,7 +153,7 @@
                     </div>
                 </a>
 
-                <nav class="nav-pill-menu">
+                <nav class="nav-pill-menu" id="navPillMenu">
                     <a href="index.html#utama" data-i18n="nav_home">Utama</a>
                     <a href="index.html#fleet" data-i18n="nav_fleet">Senarai Kereta</a>
                     <a href="places-to-visit.html" class="active" data-i18n="nav_places">Tempat Menarik</a>
@@ -175,6 +175,11 @@
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                         <span data-i18n="nav_whatsapp">WhatsApp</span>
                     </a>
+                    <button class="hamburger-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Buka Menu Navigasi">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</button>
                 </div>
             </header>
         </div>
@@ -203,7 +208,7 @@
                         <h3 class="place-title" data-i18n="p1_title">1. Penang Hill (Bukit Bendera)</h3>
                         <p class="place-desc" data-i18n="p1_desc">Antara tarikan paling popular di Pulau Pinang. Nikmati cuaca yang nyaman, pemandangan panoramik memukau, laluan berjalan kaki, kafe, dan mercu tanda bersejarah.</p>
                         
-                        <div class="place-subhead">Tarikan Masa Depan: Penang Hill Cable Car</div>
+                        <div class="place-subhead" data-i18n="p1_subhead">Tarikan Masa Depan: Penang Hill Cable Car</div>
                         <p class="place-desc" style="font-size:0.86rem; margin-bottom:10px;">Pembangunan pelancongan ikonik yang menawarkan perjalanan spektakuler di atas hutan hujan tropika dengan pemandangan udara George Town dan garis pantai.</p>
                         
                         <ul class="place-highlights">
@@ -297,7 +302,7 @@
                         <h3 class="place-title" data-i18n="p5_title">5. George Town UNESCO World Heritage Site</h3>
                         <p class="place-desc" data-i18n="p5_desc">Bandar bersejarah yang penuh dengan keunikan budaya, bangunan warisan kolonial, muzium, kafe hipster, dan sajian makanan jalanan tempatan yang popular.</p>
                         
-                        <div class="place-subhead">Jalan-Jalan Wajib Dilawati:</div>
+                        <div class="place-subhead" data-i18n="p5_subhead">Jalan-Jalan Wajib Dilawati:</div>
                         <ul class="place-highlights">
                             <li data-i18n="p5_h1"><strong>Armenian Street:</strong> Hub mural lukisan dinding (street art) ikonik & kraf tangan.</li>
                             <li data-i18n="p5_h2"><strong>Love Lane:</strong> Kafe santai, suasana malam, dan bangunan warisan.</li>
@@ -321,7 +326,7 @@
                         <h3 class="place-title" data-i18n="p6_title">6. Gurney Drive & Andaman Island</h3>
                         <p class="place-desc" data-i18n="p6_desc">Terkenal sebagai syurga makanan penjaja (hawker food), pusat membeli-belah (Gurney Plaza & Gurney Paragon), dan laluan berjalan kaki santai di tepi laut.</p>
                         
-                        <div class="place-subhead">Terokai Pembangunan Baharu Pulau Andaman:</div>
+                        <div class="place-subhead" data-i18n="p6_subhead">Terokai Pembangunan Baharu Pulau Andaman:</div>
                         <p class="place-desc" style="font-size:0.86rem; margin-bottom:10px;">Terletak bersebelahan Gurney Drive, perbandaran tambakan laut baharu ini mentransformasikan garis pantai utara kepada destinasi gaya hidup moden yang terhubung terus dengan Gurney Bay.</p>
 
                         <ul class="place-highlights">
@@ -347,7 +352,7 @@
                         <h3 class="place-title" data-i18n="p7_title">7. The Light City Waterfront</h3>
                         <p class="place-desc" data-i18n="p7_desc">Terletak di pesisir pantai timur Pulau Pinang, destinasi gaya hidup moden ini menawarkan pemandangan indah Selat Pulau Pinang yang tenang, jauh daripada kesesakan George Town.</p>
                         
-                        <div class="place-subhead">Aktiviti Menarik di The Light City:</div>
+                        <div class="place-subhead" data-i18n="p7_subhead">Aktiviti Menarik di The Light City:</div>
                         <ul class="place-highlights">
                             <li data-i18n="p7_h1">Berjalan santai di sepanjang persiaran pesisir laut (waterfront promenade).</li>
                             <li data-i18n="p7_h2">Menikmati pemandangan indah matahari terbit dan terbenam.</li>
